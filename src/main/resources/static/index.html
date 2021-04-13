@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Motorvogn</title>
+    <script src="jQuery.js"></script>
+    <script src="bootstrap-3.4.1-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.4.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <form id="form">
+                <div class="form-group">
+                    <label class="form-label" for="personnummer">Eiers personnummer:</label>
+                    <input class="form-control" id="personnummer" type="number" min="1"required>
+                </div>
+                <div class="form-group">
+                    <label for="navn">Eiers navn:</label>
+                    <input class="form-control" id="navn" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label for="adresse">Eiers adresse:</label>
+                    <input class="form-control" id="adresse" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label for="kjennetegn">Kjennetegn:</label>
+                    <input class="form-control" id="kjennetegn" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label for="merke">Bilmerke:</label>
+                    <select id="merke" class="dropdown" onchange="finnTyper()">
+                        <option disabled selected>Velg bilmerke</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label id="typeLabel" for="type">Biltype:</label>
+                    <select id="type" class="dropdown">
+                        <option disabled selected>Velg biltype</option>
+                    </select>
+                </div>
+                <button form="form" type="submit" class="btn btn-primary" onclick="registrer()">Registrer</button>
+            </form>
+        </div>
+        <div class="col-lg-8">
+                <table class="table" id="utTabell">
+                    <thead>
+                    <th scope="col">PersonNr</th>
+                    <th scope="col">Navn</th>
+                    <th scope="col">Adresse</th>
+                    <th scope="col">Kjennetegn</th>
+                    <th scope="col">Merke</th>
+                    <th scope="col">Type</th>
+                    </thead>
+                </table>
+            </div>
+        <button type="button" class="btn btn-danger" onclick="slettRader()">Slett alle rader</button>
+        </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
