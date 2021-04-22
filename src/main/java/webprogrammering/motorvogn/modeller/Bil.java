@@ -4,11 +4,6 @@ public class Bil {
     private String merke;
     private String type;
 
-    public Bil(String merke, String type) {
-        this.merke = merke;
-        this.type = type;
-    }
-
     public Bil(){ }
 
     public String getMerke() {

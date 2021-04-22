@@ -63,25 +63,6 @@ function formaterTyper(biler, valgtMerke) {
     }
 }
 
-//Feilhåndterer ved å sjekke at alle felt er fylt inn
-function feilhandtering() {
-    if (personnummer === "" || personnummer < 1) {
-        return false
-    } else if (navn === "") {
-        return false
-    } else if (adresse === "") {
-        return false
-    } else if (kjennetegn === "") {
-        return false
-    } else if (bilmerke === "") {
-        return false
-    } else if (biltype === "") {
-        return false
-    } else {
-        return true;
-    }
-}
-
 //Registrerer data for å legge inn på server
 function registrer() {
     personnummer = $("#personnummer").val();
@@ -136,6 +117,9 @@ function SkrivUtData(data) {
 
         let nycelle5 = nyrad.insertCell(5);
         nycelle5.innerHTML = data[i].biltype;
+
+        let nycelle6 = nyrad.insertCell(6)
+        nycelle6.innerHTML = "<button type='button' class='btn btn-danger' onclick='slettMotorvogn(antallRader)'>Slett</button>";
     }
 }
 
@@ -148,4 +132,8 @@ function slettRader() {
             utTabell.deleteRow(i);
         }
     });
+}
+
+function slettMotorvogn(antallRader){
+    console.log(antallRader)
 }
